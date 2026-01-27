@@ -1,0 +1,15 @@
+{
+  "secretApiKey": "secret",
+  "openweather":{
+    "baseUrl": "https://api.openweathermap.org",
+    "dataFetchIntervalMs": 1800000,
+    "fetchDelay": 5000
+  },
+  "sites": [
+    {
+      "name": "SITE_NAME",
+      "lat": "-33.333",
+      "lon": "-55.55"
+    }
+  ]
+}
