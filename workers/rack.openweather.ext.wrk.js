@@ -3,7 +3,7 @@
 const async = require('async')
 const OpenWeatherApi = require('./lib/openweather.api')
 const { DEFAULT_INTERVAL, ICON_MAP } = require('./constants')
-const TetherWrkBase = require('tether-wrk-base/workers/base.wrk.tether')
+const TetherWrkBase = require('@tetherto/tether-wrk-base/workers/base.wrk.tether')
 
 class WrkOpenWeatherRack extends TetherWrkBase {
   constructor (conf, ctx) {
@@ -25,11 +25,11 @@ class WrkOpenWeatherRack extends TetherWrkBase {
     this.loadConf('openweather', 'apiConf')
 
     this.setInitFacs([
-      ['fac', 'hp-svc-facs-store', 's1', 's1', {
+      ['fac', '@tetherto/hp-svc-facs-store', 's1', 's1', {
         storeDir: `store/${this.ctx.rack}-db`
       }, 0],
-      ['fac', 'bfx-facs-interval', '0', 'openweather', {}, -10],
-      ['fac', 'bfx-facs-http', '0', '0', {
+      ['fac', '@bitfinex/bfx-facs-interval', '0', 'openweather', {}, -10],
+      ['fac', '@bitfinex/bfx-facs-http', '0', '0', {
         baseUrl: this.conf.apiConf.openweather.baseUrl,
         timeout: 30 * 1000
       }, 0]
