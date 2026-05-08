@@ -36,6 +36,7 @@
     "dev": "DEBUG=* node worker.js --wtype wrk-ext-openweather-rack --env development --rack rack-1"
   },
   "dependencies": {
+    "@bitfinex/bfx-svc-boot-js": "1.2.0",
     "async": "3.2.6",
     "@bitfinex/bfx-facs-http": "git+https://github.com/bitfinexcom/bfx-facs-http.git",
     "@bitfinex/bfx-facs-interval": "git+https://github.com/bitfinexcom/bfx-facs-interval.git",
